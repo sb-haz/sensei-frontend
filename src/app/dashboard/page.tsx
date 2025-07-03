@@ -253,7 +253,7 @@ const Dashboard = () => {
           </div>
 
           <div className="bg-white rounded-xl p-6 border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Today's Goal</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Today&apos;s Goal</h2>
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Complete 2 interviews</span>
@@ -262,7 +262,7 @@ const Dashboard = () => {
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div className="bg-blue-600 h-2 rounded-full" style={{ width: '50%' }}></div>
               </div>
-              <p className="text-xs text-gray-500">Keep going! You're halfway there.</p>
+              <p className="text-xs text-gray-500">Keep going! You&apos;re halfway there.</p>
             </div>
           </div>
         </div>

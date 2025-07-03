@@ -525,10 +525,10 @@ const Dashboard = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Experience Level</label>
-                <select className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" defaultValue="Senior Level">
                   <option>Entry Level</option>
                   <option>Mid Level</option>
-                  <option defaultValue>Senior Level</option>
+                  <option value="Senior Level">Senior Level</option>
                   <option>Executive</option>
                 </select>
               </div>

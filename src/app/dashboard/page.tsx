@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Home, 
@@ -31,6 +32,7 @@ import {
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [sidebarOpen] = useState(true);
+  const router = useRouter();
 
   const sidebarItems = [
     { id: 'overview', label: 'Overview', icon: Home },
@@ -73,6 +75,7 @@ const Dashboard = () => {
         <h1 className="text-2xl font-bold text-gray-900">Dashboard Overview</h1>
         <motion.button 
           className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+          onClick={() => router.push('/dashboard/interview')}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -201,7 +204,7 @@ const Dashboard = () => {
                 className="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.location.href = '/dashboard/interview'}
+                onClick={() => router.push('/dashboard/interview')}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -235,6 +238,7 @@ const Dashboard = () => {
             <div className="space-y-3">
               <motion.button 
                 className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                onClick={() => router.push('/dashboard/interview')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -249,7 +253,7 @@ const Dashboard = () => {
           </div>
 
           <div className="bg-white rounded-xl p-6 border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Today`&apos;`s Goal</h2>
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Today's Goal</h2>
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">Complete 2 interviews</span>
@@ -258,7 +262,7 @@ const Dashboard = () => {
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div className="bg-blue-600 h-2 rounded-full" style={{ width: '50%' }}></div>
               </div>
-              <p className="text-xs text-gray-500">Keep going! You`&apos;`re halfway there.</p>
+              <p className="text-xs text-gray-500">Keep going! You're halfway there.</p>
             </div>
           </div>
         </div>
@@ -462,6 +466,7 @@ const Dashboard = () => {
               
               <motion.button 
                 className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+                onClick={() => router.push('/dashboard/interview')}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -523,7 +528,7 @@ const Dashboard = () => {
                 <select className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                   <option>Entry Level</option>
                   <option>Mid Level</option>
-                  <option selected>Senior Level</option>
+                  <option defaultValue>Senior Level</option>
                   <option>Executive</option>
                 </select>
               </div>

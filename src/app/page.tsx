@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion, Variants } from 'framer-motion'
+import { useRouter } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import { PreviewBox } from '@/components/PreviewBox'
 import { Play, Sparkles, Atom, Check } from 'lucide-react'
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +19,10 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleGetStarted = () => {
+    router.push('/dashboard')
+  }
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -90,6 +96,7 @@ export default function Home() {
                 >
                   <motion.button 
                     className="bg-blue-600 text-white px-8 py-3.5 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 font-medium"
+                    onClick={handleGetStarted}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -191,7 +198,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900">Who It`&apos;`s For</h2>
+              <h2 className="text-4xl font-bold text-gray-900">Who It&apos;s For</h2>
               <p className="text-lg text-gray-600 mt-4">From first-timers to seasoned pros, Interview Sensei adapts to you.</p>
             </motion.div>
             <motion.div 
@@ -267,6 +274,7 @@ export default function Home() {
                     </ul>
                     <motion.button 
                       className="w-full py-4 px-6 rounded-xl bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition-colors font-medium"
+                      onClick={handleGetStarted}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -296,6 +304,7 @@ export default function Home() {
                     </ul>
                     <motion.button 
                       className="w-full py-4 px-6 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
+                      onClick={handleGetStarted}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

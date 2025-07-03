@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { 
   Mic, 
   MicOff, 
@@ -16,10 +16,7 @@ import {
   EyeOff, 
   Repeat, 
   ChevronLeft,
-  Play,
-  Pause,
   Volume2,
-  VolumeX,
   MoreVertical,
   Lightbulb,
   Target,
@@ -59,12 +56,12 @@ const InterviewSession = () => {
   const [userSpeaking, setUserSpeaking] = useState<boolean>(false)
   const [interviewerTranscript, setInterviewerTranscript] = useState<string>('')
   const [userTranscript, setUserTranscript] = useState<string>('')
-  const [interviewerName, setInterviewerName] = useState<string>("Sarah Chen")
+  const [interviewerName] = useState<string>("Sarah Chen")
   const [micEnabled, setMicEnabled] = useState<boolean>(false)
   const [videoEnabled, setVideoEnabled] = useState<boolean>(true)
   const [callActive, setCallActive] = useState<boolean>(true)
   const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false)
-  const [interviewType, setInterviewType] = useState<string>("Technical")
+  const [interviewType] = useState<string>("Technical")
   const [showHints, setShowHints] = useState<boolean>(true)
   const [isTypingHints, setIsTypingHints] = useState<boolean>(false)
   const [audioEnabled, setAudioEnabled] = useState<boolean>(false)
@@ -88,7 +85,7 @@ const InterviewSession = () => {
   useEffect(() => {
     if (!callActive) return
     
-    let timeoutIds: NodeJS.Timeout[] = []
+    const timeoutIds: NodeJS.Timeout[] = []
     
     // Auto-start the interview cycle
     const askQuestion = async () => {

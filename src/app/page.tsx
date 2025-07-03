@@ -1,15 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import { PreviewBox } from '@/components/PreviewBox'
-import { Play, Sparkles, Atom, Check, ChevronDown, ArrowRight } from 'lucide-react'
-import Image from 'next/image'
+import { Play, Sparkles, Atom, Check } from 'lucide-react'
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +18,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -30,7 +28,7 @@ export default function Home() {
     }
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -42,7 +40,7 @@ export default function Home() {
     }
   }
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -83,7 +81,7 @@ export default function Home() {
                     <span className="text-blue-600"> That Works.</span>
                   </h1>
                   <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                    Interview Sensei equips candidates with realistic simulations, data-driven feedback, and AI-tailored coaching to build confidence and improve outcomes—whether you're a graduate or a seasoned pro.
+                    Interview Sensei equips candidates with realistic simulations, data-driven feedback, and AI-tailored coaching to build confidence and improve outcomes—whether you`&apos;`re a graduate or a seasoned pro.
                   </p>
                 </motion.div>
                 <motion.div 
@@ -193,7 +191,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-bold text-gray-900">Who It's For</h2>
+              <h2 className="text-4xl font-bold text-gray-900">Who It`&apos;`s For</h2>
               <p className="text-lg text-gray-600 mt-4">From first-timers to seasoned pros, Interview Sensei adapts to you.</p>
             </motion.div>
             <motion.div 
